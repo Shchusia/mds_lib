@@ -33,3 +33,14 @@ class MDSRequestException(MDSException):
     def __init__(self, request_type, bad_response: str):
         self.message = f"Request: {request_type} returned error. Error: {bad_response}"
         Exception.__init__(self, self.message)
+
+
+class NotAllowedMethods(MDSException):
+    """ """
+
+    def __init__(self, incorrect_method: str, allowed_methods: list[str]):
+        self.message = (
+            f"NotAllowedMethod - `{incorrect_method}`."
+            f" AllowedMethods - {allowed_methods}"
+        )
+        Exception.__init__(self, self.message)

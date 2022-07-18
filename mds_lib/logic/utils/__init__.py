@@ -3,7 +3,7 @@ utils for logic functions
 """
 import requests  # type: ignore
 
-from mds.const import LOGGER
+from mds_lib.const import LOGGER
 
 
 def handle_error(response: requests.Response) -> str:

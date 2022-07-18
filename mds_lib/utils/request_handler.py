@@ -3,9 +3,9 @@ from typing import Any, Dict
 
 import requests  # type: ignore
 
-from mds.const import LOGGER
-from mds.exc import NotAllowedMethods
-from mds.utils.singleton import Singleton
+from mds_lib.const import LOGGER
+from mds_lib.exc import NotAllowedMethods
+from mds_lib.utils.singleton import Singleton
 
 
 class AllowedMethods(Enum):

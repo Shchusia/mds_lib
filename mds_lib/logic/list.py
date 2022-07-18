@@ -3,11 +3,11 @@ Module with GetList command
 """
 from typing import List, Optional
 
-from mds.base.config import Config
-from mds.const import LOGGER
-from mds.exc import MDSRequestException
-from mds.models.api_models import ModelFile
-from mds.utils.request_handler import RequestHandler
+from mds_lib.base.config import Config
+from mds_lib.const import LOGGER
+from mds_lib.exc import MDSRequestException
+from mds_lib.models.api_models import ModelFile
+from mds_lib.utils.request_handler import RequestHandler
 
 from .utils import handle_error
 

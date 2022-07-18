@@ -5,10 +5,10 @@ from pathlib import Path
 from typing import Optional
 from uuid import uuid4
 
-from mds.base.config import Config
-from mds.const import LOGGER, SIZE_CHUNK_DOWNLOAD_FILE
-from mds.exc import MDSRequestException
-from mds.utils.request_handler import RequestHandler
+from mds_lib.base.config import Config
+from mds_lib.const import LOGGER, SIZE_CHUNK_DOWNLOAD_FILE
+from mds_lib.exc import MDSRequestException
+from mds_lib.utils.request_handler import RequestHandler
 
 from .utils import handle_error
 

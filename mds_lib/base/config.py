@@ -5,7 +5,7 @@ from typing import Any, Dict, Optional
 import requests  # type: ignore
 import yaml  # type: ignore  # noqa
 
-from mds.const import (
+from mds_lib.const import (
     MDS_ACCESS_TOKEN_ENV_NAME,
     MDS_CONFIG_FILE_MDS_ACCESS_TOKEN,
     MDS_CONFIG_FILE_MDS_HOST,
@@ -15,9 +15,9 @@ from mds.const import (
     MDS_SECTION_ENV_DEFAULT_VALUE,
     MDS_SECTION_ENV_NAME,
 )
-from mds.exc import MDSConfigException, MDSHostException, MDSRequestException
-from mds.utils.request_handler import RequestHandler
-from mds.utils.singleton import Singleton
+from mds_lib.exc import MDSConfigException, MDSHostException, MDSRequestException
+from mds_lib.utils.request_handler import RequestHandler
+from mds_lib.utils.singleton import Singleton
 
 
 class RouteHandler:

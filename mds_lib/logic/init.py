@@ -3,7 +3,7 @@ Module with init command
 """
 import yaml  # type: ignore  # noqa
 
-from mds.const import (
+from mds_lib.const import (
     LOGGER,
     MDS_CONFIG_FILE_MDS_ACCESS_TOKEN,
     MDS_CONFIG_FILE_MDS_HOST,

@@ -1,6 +1,6 @@
 import os
 
-from mds.const import MDS_FILE_ENV_DEFAULT_VALUE
+from mds_lib.const import MDS_FILE_ENV_DEFAULT_VALUE
 
 MDS_TEST_HOST = "http://localhost:8000"
 MDS_TEST_ACCESS_TOKEN = "30bea63f-321e-488e-a136-3144a1cd4d43"

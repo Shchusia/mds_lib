@@ -3,19 +3,19 @@ from pathlib import Path
 import click
 import yaml  # type: ignore  # noqa
 
-from mds.const import (
+from mds_lib.const import (
     MDS_CONFIG_FILE_MDS_ACCESS_TOKEN,
     MDS_CONFIG_FILE_MDS_HOST,
     MDS_FILE_ENV_DEFAULT_VALUE,
 )
-from mds.logic import (
+from mds_lib.logic import (
     command_get_list,
     command_init_config,
     command_pull_file,
     command_push_file,
     command_remove_file,
 )
-from mds.utils.utils import GroupWithCommandOptions, get_version
+from mds_lib.utils.utils import GroupWithCommandOptions, get_version
 
 
 @click.group(

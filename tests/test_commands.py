@@ -3,14 +3,14 @@ from pathlib import Path
 
 import pytest
 
-from mds import (
+from mds_lib import (
     command_get_list,
     command_init_config,
     command_pull_file,
     command_push_file,
     command_remove_file,
 )
-from mds.exc import MDSConfigException, MDSRequestException
+from mds_lib.exc import MDSConfigException, MDSRequestException
 from tests.utils import (
     MDS_TEST_ACCESS_TOKEN,
     MDS_TEST_HOST,

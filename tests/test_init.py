@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from mds import command_init_config
-from mds.const import MDS_FILE_ENV_DEFAULT_VALUE
+from mds_lib import command_init_config
+from mds_lib.const import MDS_FILE_ENV_DEFAULT_VALUE
 from tests.utils import MDS_TEST_ACCESS_TOKEN, MDS_TEST_HOST, remove_config
 
 

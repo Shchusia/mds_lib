@@ -6,9 +6,9 @@ import pathlib
 
 from setuptools import setup
 
-from mds.utils.utils import get_version
+from mds_lib.utils.utils import get_version
 
-LIB_NAME = "mds"
+LIB_NAME = "mds_lib"
 HERE = pathlib.Path(__file__).parent
 
 

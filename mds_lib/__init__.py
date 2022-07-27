@@ -6,6 +6,8 @@ from .logic import (
     command_get_list,
     command_init_config,
     command_pull_file,
+    command_pull_file_types,
+    command_pull_files,
     command_push_file,
     command_remove_file,
 )
@@ -17,4 +19,6 @@ __all__ = [
     "command_get_list",
     "command_pull_file",
     "command_init_config",
+    "command_pull_file_types",
+    "command_pull_files",
 ]

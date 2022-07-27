@@ -87,7 +87,6 @@ class RouteHandler:
             self.__route_list = data["listRoute"]
 
         else:
-            data = ""
             try:
                 data = str(response.json())
             except Exception:  # noqa

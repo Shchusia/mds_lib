@@ -55,7 +55,7 @@ def entry_point(
     help="To overwrite, in case file already exists",
     type=bool,
 )
-def init_config(overwrite: bool):
+def init_config(overwrite: bool):  # pragma: no cover
     print("MDS create config")
     print(f"Input `{MDS_CONFIG_FILE_MDS_HOST}`")
     mds_host = input()
@@ -108,7 +108,7 @@ def init_config(overwrite: bool):
     help="To overwrite, in case file already exists",
     type=bool,
 )
-def pull(file, file_type, overwrite, file_local):
+def pull(file, file_type, overwrite, file_local):  # pragma: no cover
     print(file, file_type, overwrite, file_local)
     command_pull_file(
         file=file, file_local=file_local, file_type=file_type, overwrite=overwrite
@@ -149,7 +149,7 @@ def pull(file, file_type, overwrite, file_local):
     help="File to upload",
     type=str,
 )
-def push(overwrite, file, file_type):
+def push(overwrite, file, file_type):  # pragma: no cover
     command_push_file(file, file_type, overwrite)
 
 
@@ -185,7 +185,7 @@ def remove(file, file_type):
     help="file-type",
     type=str,
 )
-def get_list(file_type: str):
+def get_list(file_type: str):  # pragma: no cover
     command_get_list(file_type=file_type, is_view=True)
 
 

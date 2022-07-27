@@ -5,7 +5,7 @@ from typing import Optional
 import click
 
 
-def get_version() -> Optional[str]:
+def get_version() -> Optional[str]:  # pragma: no cover
     """
       Method for getting the version of the library from the init file
     :requirements: version must be specified separately
@@ -23,7 +23,7 @@ def get_version() -> Optional[str]:
         raise RuntimeError("Unable to determine version.")
 
 
-class GroupWithCommandOptions(click.Group):
+class GroupWithCommandOptions(click.Group):  # pragma: no cover
     """Allow application of options to group with multi command"""
 
     def add_command(self, cmd, name=None):

@@ -3,7 +3,7 @@
 Module with GetList command
 ```
 
-> Path: `mds\logic\list.py`
+> Path: `mds_lib\logic\list.py`
 `COMMAND` = "GetList"
 ## Function  `command_get_list`
 ```text

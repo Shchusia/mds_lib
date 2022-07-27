@@ -170,10 +170,18 @@ def command_pull_file_types(
     overwrite: Optional[bool] = False,
 ) -> Optional[Dict[str, Path]]:
     """
+    Pull many files by file_types
 
-    :param file_types_to_pull:
-    :param local_path:
-    :param overwrite:
+    Method for extraction many files.
+    If the list is not provided, then it is taken from the config file
+    from key `mds_pull_file_types`
+
+     The same principle as with file_type like
+    :param file_types_to_pull: file_types to pull
+    :type file_types_to_pull: Union[List[str], Dict[str, str], str]
+    :param local_path:  path to folder to save
+    :param overwrite: is need overwrite if file exists   default: False
+    :type overwrite: bool
     :return:
     """
     config = Config()

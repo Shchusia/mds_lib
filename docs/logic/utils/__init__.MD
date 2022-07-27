@@ -3,7 +3,7 @@
 utils for logic functions
 ```
 
-> Path: `mds\logic\utils\__init__.py`
+> Path: `mds_lib\logic\utils\__init__.py`
 ## Function  `handle_error`
 ```text
 Method converts error to pretty format if can

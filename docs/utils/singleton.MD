@@ -1,5 +1,5 @@
 # Module `singleton.py`
-> Path: `mds\utils\singleton.py`
+> Path: `mds_lib\utils\singleton.py`
 ## Class `Singleton`
 ```text
 Class implements the singleton pattern

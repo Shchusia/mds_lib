@@ -23,9 +23,9 @@ OPTIONS:
   # Available languages [py]
   language: "py"
   # If not specified, the documentation will be saved where the command was called from
-  path_to_root_folder: "./mds"
+  path_to_root_folder: "./mds_lib"
   extract_with_same_hierarchy: True
-  overwrite_if_file_exists: False
+  overwrite_if_file_exists: True
   # If not specified, the documentation will be saved where the command was called from
   path_to_save: "./docs"
   # File name to save the documentation

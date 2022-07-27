@@ -3,7 +3,7 @@
 Module with remove command
 ```
 
-> Path: `mds\logic\remove.py`
+> Path: `mds_lib\logic\remove.py`
 `COMMAND` = "RemoveFile"
 ## Function  `command_remove_file`
 ```text

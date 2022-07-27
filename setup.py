@@ -34,9 +34,14 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     author_email="denisshchutskyi@gmail.com",
-    # url="https://github.com/Shchusia/gendoc",
+    url="https://github.com/Shchusia/mds_lib",
     packages=get_packages(),
     keywords=["pip", LIB_NAME],
+    package_data={
+        f"{LIB_NAME}.src": [
+            "*.yaml",
+        ]
+    },
     python_requires=">=3.7",
     entry_points={"console_scripts": [f"{LIB_NAME}={LIB_NAME}.commands:entry_point"]},
     install_requires=["click==8.1.2", "PyYAML==6.0", "requests==2.24.0"],

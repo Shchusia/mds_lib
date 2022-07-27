@@ -1,13 +1,7 @@
-from pathlib import Path
-
 import click
 import yaml  # type: ignore  # noqa
 
-from mds_lib.const import (
-    MDS_CONFIG_FILE_MDS_ACCESS_TOKEN,
-    MDS_CONFIG_FILE_MDS_HOST,
-    MDS_FILE_ENV_DEFAULT_VALUE,
-)
+from mds_lib.const import MDS_CONFIG_FILE_MDS_ACCESS_TOKEN, MDS_CONFIG_FILE_MDS_HOST
 from mds_lib.logic import (
     command_get_list,
     command_init_config,
@@ -61,17 +55,15 @@ def entry_point(
     help="To overwrite, in case file already exists",
     type=bool,
 )
-def init_config(overwrite: bool):
+def init_config(overwrite: bool):  # pragma: no cover
     print("MDS create config")
-    file = Path(MDS_FILE_ENV_DEFAULT_VALUE)
-    if file.is_file() and not overwrite:
-        print("Such file already exists. To replace use the command '-o'")
-        return
     print(f"Input `{MDS_CONFIG_FILE_MDS_HOST}`")
     mds_host = input()
     print(f"Input `{MDS_CONFIG_FILE_MDS_ACCESS_TOKEN}`")
     mds_access_token = input()
-    command_init_config(mds_host=mds_host, mds_access_token=mds_access_token)
+    command_init_config(
+        mds_host=mds_host, mds_access_token=mds_access_token, overwrite=overwrite
+    )
 
 
 @entry_point.command(
@@ -116,7 +108,7 @@ def init_config(overwrite: bool):
     help="To overwrite, in case file already exists",
     type=bool,
 )
-def pull(file, file_type, overwrite, file_local):
+def pull(file, file_type, overwrite, file_local):  # pragma: no cover
     print(file, file_type, overwrite, file_local)
     command_pull_file(
         file=file, file_local=file_local, file_type=file_type, overwrite=overwrite
@@ -157,7 +149,7 @@ def pull(file, file_type, overwrite, file_local):
     help="File to upload",
     type=str,
 )
-def push(overwrite, file, file_type):
+def push(overwrite, file, file_type):  # pragma: no cover
     command_push_file(file, file_type, overwrite)
 
 
@@ -193,7 +185,7 @@ def remove(file, file_type):
     help="file-type",
     type=str,
 )
-def get_list(file_type: str):
+def get_list(file_type: str):  # pragma: no cover
     command_get_list(file_type=file_type, is_view=True)
 
 

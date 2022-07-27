@@ -20,7 +20,7 @@ TST_FLDR_3 = TEST_BASE_FOLDER / "folder_3"
 IS_PRINT = True
 
 
-def remove_file(file_path: str):
+def remove_file(file_path: Union[str, Path]):
     try:
         os.remove(file_path)
     except:  # noqa
@@ -42,16 +42,19 @@ def remove_files_extracted_to_root_folder():
     def is_file_to_remove(file_name: str):
         return len(file_name.split(TEMPLATE_NAME_EXTRACTED_FILES)) == 2
 
-    path_to_folder = Path(__file__).absolute().parent
-    print(path_to_folder)
+    def rem_file(path_to_folder: Path):
 
-    files = []
-    for (dirpath, dirnames, filenames) in os.walk(path_to_folder):
-        files.extend(filenames)
-        break
-    for file in files:
-        if is_file_to_remove(file):
-            remove_file(path_to_folder / file)
+        files = []
+        for (dirpath, dirnames, filenames) in os.walk(path_to_folder):
+            files.extend(filenames)
+            break
+        for file in files:
+            if is_file_to_remove(file):
+                remove_file(path_to_folder / file)
+
+    from_file_path_to_folder = Path(__file__).absolute().parent
+    rem_file(from_file_path_to_folder)
+    rem_file(Path("./"))
 
 
 def get_just_name(path_to_file: str) -> str:

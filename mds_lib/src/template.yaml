@@ -1,0 +1,28 @@
+mds:
+  # Host remote storage
+  mds_host: ""
+  # Access token for your project 
+  mds_access_token: ""
+  # Path to save to local storage
+  #mds_local_path: ""
+  # What file_types to download
+  # You can specify one file type
+  #mds_pull_file_types: ""
+  # You can specify multiple file types to download
+  #mds_pull_file_types: 
+  #  - file_1
+  #  - file_2
+  # You can specify several types of files to download and names
+  # with which to save to local storage
+  #mds_pull_file_types: 
+  #  file_type_1: local_file_name_1
+  #  file_type_2: local_file_name_2
+  # What files to download
+  # The same principle as with file_type like
+  #mds_pull_files: ""
+  #mds_pull_files: 
+  #  - file_1
+  #  - file_2
+  #mds_pull_files: 
+  #  file_1: local_file_name_1
+  #  file_2: local_file_name_2

@@ -1,13 +1,7 @@
-from pathlib import Path
-
 import click
 import yaml  # type: ignore  # noqa
 
-from mds_lib.const import (
-    MDS_CONFIG_FILE_MDS_ACCESS_TOKEN,
-    MDS_CONFIG_FILE_MDS_HOST,
-    MDS_FILE_ENV_DEFAULT_VALUE,
-)
+from mds_lib.const import MDS_CONFIG_FILE_MDS_ACCESS_TOKEN, MDS_CONFIG_FILE_MDS_HOST
 from mds_lib.logic import (
     command_get_list,
     command_init_config,
@@ -63,15 +57,13 @@ def entry_point(
 )
 def init_config(overwrite: bool):
     print("MDS create config")
-    file = Path(MDS_FILE_ENV_DEFAULT_VALUE)
-    if file.is_file() and not overwrite:
-        print("Such file already exists. To replace use the command '-o'")
-        return
     print(f"Input `{MDS_CONFIG_FILE_MDS_HOST}`")
     mds_host = input()
     print(f"Input `{MDS_CONFIG_FILE_MDS_ACCESS_TOKEN}`")
     mds_access_token = input()
-    command_init_config(mds_host=mds_host, mds_access_token=mds_access_token)
+    command_init_config(
+        mds_host=mds_host, mds_access_token=mds_access_token, overwrite=overwrite
+    )
 
 
 @entry_point.command(

@@ -3,7 +3,7 @@
 Models returned from api
 ```
 
-> Path: `mds\models\api_models.py`
+> Path: `mds_lib\models\api_models.py`
 `SubPydanticBaseModel` = TypeVar('SubPydanticBaseModel', bound=BaseModel)
 ## Class `ModelFile`
 ### Basses(s)

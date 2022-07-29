@@ -3,7 +3,7 @@
 Exceptions
 ```
 
-> Path: `mds\exc.py`
+> Path: `mds_lib\exc.py`
 ## Class `MDSException`
 ```text
 Main Exception

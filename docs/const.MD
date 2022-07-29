@@ -1,5 +1,5 @@
 # Module `const.py`
-> Path: `mds\const.py`
+> Path: `mds_lib\const.py`
 `LOGGER` = logging.getLogger(__name__)
 `MDS_FILE_ENV_NAME` = "MDS_FILE"
 `MDS_SECTION_ENV_NAME` = "MDS_SECTION"
@@ -9,6 +9,11 @@
 `MDS_SECTION_ENV_DEFAULT_VALUE` = "mds"
 `MDS_CONFIG_FILE_MDS_HOST` = "mds_host"
 `MDS_CONFIG_FILE_MDS_ACCESS_TOKEN` = "mds_access_token"
+`MDS_CONFIG_FILE_MDS_PULL_FILE_TYPES` = "mds_pull_file_types"
+`MDS_CONFIG_FILE_MDS_PULL_FILES` = "mds_pull_files"
+`MDS_CONFIG_FILE_MDS_LOCAL_PATH` = "mds_local_path"
+`TEMPLATE_NAME_EXTRACTED_FILES` = "file_"
+`TEMPLATE_FILE_TYPE_EXTRACTED_FILES` = ".tmp"
 `NUMBER_OF_CONNECTION_ATTEMPTS` = 3
 `SECONDS_OF_SLEEP_BETWEEN_REQUESTS` = 5
 `SIZE_CHUNK_DOWNLOAD_FILE` = 2 ** 1024

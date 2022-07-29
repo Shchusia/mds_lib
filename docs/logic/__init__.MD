@@ -3,4 +3,4 @@
 import commands
 ```
 
-> Path: `mds\logic\__init__.py`
+> Path: `mds_lib\logic\__init__.py`

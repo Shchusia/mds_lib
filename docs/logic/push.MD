@@ -3,7 +3,7 @@
 Module with Push command
 ```
 
-> Path: `mds\logic\push.py`
+> Path: `mds_lib\logic\push.py`
 `COMMAND` = "Push"
 ## Function  `command_push_file`
 ```text

@@ -1,5 +1,5 @@
 # Module `commands.py`
-> Path: `mds\commands.py`
+> Path: `mds_lib\commands.py`
 ## Function  `entry_point`
 ### Decorator(s)
 + click.group(help='Utility for work with mini data storage', cls=GroupWithCommandOptions, context_settings=dict(ignore_unknown_options=True))

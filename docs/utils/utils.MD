@@ -1,5 +1,5 @@
 # Module `utils.py`
-> Path: `mds\utils\utils.py`
+> Path: `mds_lib\utils\utils.py`
 ## Function  `get_version`
 ```text
 Method for getting the version of the library from the init file

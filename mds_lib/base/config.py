@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional, Union
 
 import requests  # type: ignore
 import yaml  # type: ignore  # noqa
@@ -9,6 +9,9 @@ from mds_lib.const import (
     MDS_ACCESS_TOKEN_ENV_NAME,
     MDS_CONFIG_FILE_MDS_ACCESS_TOKEN,
     MDS_CONFIG_FILE_MDS_HOST,
+    MDS_CONFIG_FILE_MDS_LOCAL_PATH,
+    MDS_CONFIG_FILE_MDS_PULL_FILE_TYPES,
+    MDS_CONFIG_FILE_MDS_PULL_FILES,
     MDS_FILE_ENV_DEFAULT_VALUE,
     MDS_FILE_ENV_NAME,
     MDS_HOST_ENV_NAME,
@@ -84,7 +87,6 @@ class RouteHandler:
             self.__route_list = data["listRoute"]
 
         else:
-            data = ""
             try:
                 data = str(response.json())
             except Exception:  # noqa
@@ -98,6 +100,9 @@ class Config:
     __mds_access_token: str
     __mds_host: str
     __mds_router: RouteHandler
+    __mds_file_types_to_extract: Optional[Union[List[str], Dict[str, str], str]]
+    __mds_files_to_extract: Optional[Union[List[str], Dict[str, str], str]]
+    __mds_local_path: Optional[str]
 
     @property
     def mds_access_token(self) -> str:
@@ -106,6 +111,18 @@ class Config:
     @property
     def mds_host(self) -> str:
         return self.__mds_host
+
+    @property
+    def mds_file_types(self) -> Optional[Union[List[str], Dict[str, str], str]]:
+        return self.__mds_file_types_to_extract
+
+    @property
+    def mds_files(self) -> Optional[Union[List[str], Dict[str, str], str]]:
+        return self.__mds_file_types_to_extract
+
+    @property
+    def mds_local_path(self) -> Optional[str]:
+        return self.__mds_local_path
 
     @property
     def route_upload(self) -> str:
@@ -156,6 +173,36 @@ class Config:
                 )
             self.__mds_host = config_mds[MDS_CONFIG_FILE_MDS_HOST]
             self.__mds_access_token = config_mds[MDS_CONFIG_FILE_MDS_ACCESS_TOKEN]
+            self.__mds_local_path = config_mds.get(MDS_CONFIG_FILE_MDS_LOCAL_PATH, None)
+            if MDS_CONFIG_FILE_MDS_PULL_FILE_TYPES in config_mds:
+                if isinstance(
+                    config_mds[MDS_CONFIG_FILE_MDS_PULL_FILE_TYPES], (str, list, dict)
+                ):
+                    self.__mds_file_types_to_extract = config_mds[
+                        MDS_CONFIG_FILE_MDS_PULL_FILE_TYPES
+                    ]
+                else:
+                    raise TypeError(
+                        f"Incorrect type key {MDS_CONFIG_FILE_MDS_PULL_FILE_TYPES}."
+                        f" Allowed types (str, list, dict)"
+                    )
+            else:
+                self.__mds_file_types_to_extract = []
+            if MDS_CONFIG_FILE_MDS_PULL_FILES in config_mds:
+                if isinstance(
+                    config_mds[MDS_CONFIG_FILE_MDS_PULL_FILES], (str, list, dict)
+                ):
+                    self.__mds_files_to_extract = config_mds[
+                        MDS_CONFIG_FILE_MDS_PULL_FILES
+                    ]
+                else:
+                    raise TypeError(
+                        f"Incorrect type key {MDS_CONFIG_FILE_MDS_PULL_FILES}."
+                        f" Allowed types (str, list, dict)"
+                    )
+            else:
+                self.__mds_files_to_extract = []
+
         self.__mds_router = RouteHandler(self.__mds_host)
         if self.__mds_host[-1] == "/":
             self.__mds_host = self.__mds_host[:-1]

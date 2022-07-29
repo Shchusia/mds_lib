@@ -20,7 +20,7 @@ class MDSConfigException(MDSException):
 class MDSHostException(MDSException):
     """In provided incorrect mds host"""
 
-    def __init__(self, incorrect_host: str):
+    def __init__(self, incorrect_host: str):  # pragma: no cover
         self.message = (
             f"Invalid host - `{incorrect_host}`." f" Please check config data"
         )
@@ -38,7 +38,9 @@ class MDSRequestException(MDSException):
 class NotAllowedMethods(MDSException):
     """ """
 
-    def __init__(self, incorrect_method: str, allowed_methods: list[str]):
+    def __init__(
+        self, incorrect_method: str, allowed_methods: list[str]
+    ):  # pragma: no cover
         self.message = (
             f"NotAllowedMethod - `{incorrect_method}`."
             f" AllowedMethods - {allowed_methods}"

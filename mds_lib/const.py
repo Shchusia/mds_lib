@@ -1,7 +1,7 @@
 import logging
 
-logging.basicConfig(level=logging.INFO)  # noqa
-# logging.basicConfig(level=logging.DEBUG)  # noqa
+# logging.basicConfig(level=logging.INFO)  # noqa
+logging.basicConfig(level=logging.DEBUG)  # noqa
 LOGGER = logging.getLogger(__name__)
 
 MDS_FILE_ENV_NAME = "MDS_FILE"
@@ -13,6 +13,11 @@ MDS_FILE_ENV_DEFAULT_VALUE = "./mds_config.yaml"
 MDS_SECTION_ENV_DEFAULT_VALUE = "mds"
 MDS_CONFIG_FILE_MDS_HOST = "mds_host"
 MDS_CONFIG_FILE_MDS_ACCESS_TOKEN = "mds_access_token"
+MDS_CONFIG_FILE_MDS_PULL_FILE_TYPES = "mds_pull_file_types"
+MDS_CONFIG_FILE_MDS_PULL_FILES = "mds_pull_files"
+MDS_CONFIG_FILE_MDS_LOCAL_PATH = "mds_local_path"
+TEMPLATE_NAME_EXTRACTED_FILES = "file_"
+TEMPLATE_FILE_TYPE_EXTRACTED_FILES = ".tmp"
 
 NUMBER_OF_CONNECTION_ATTEMPTS = 3
 SECONDS_OF_SLEEP_BETWEEN_REQUESTS = 5

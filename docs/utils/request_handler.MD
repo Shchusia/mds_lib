@@ -1,5 +1,5 @@
 # Module `request_handler.py`
-> Path: `mds\utils\request_handler.py`
+> Path: `mds_lib\utils\request_handler.py`
 ## Class `AllowedMethods`
 ### Basses(s)
 + Enum

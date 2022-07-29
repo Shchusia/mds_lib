@@ -1,5 +1,5 @@
 # Module `config.py`
-> Path: `mds\base\config.py`
+> Path: `mds_lib\base\config.py`
 ## Class `RouteHandler`
 ### SubElement(s)
  > `__route_upload`: str = None
@@ -40,6 +40,9 @@
  > `__mds_access_token`: str = None
  > `__mds_host`: str = None
  > `__mds_router`: RouteHandler = None
+ > `__mds_file_types_to_extract`: Optional[Union[List[str], Dict[str, str], str]] = None
+ > `__mds_files_to_extract`: Optional[Union[List[str], Dict[str, str], str]] = None
+ > `__mds_local_path`: Optional[str] = None
  > ## Function  `mds_access_token`
  > ### Decorator(s)
  > + property
@@ -48,6 +51,18 @@
  > ### Decorator(s)
  > + property
  > #### Declared returns: `str`
+ > ## Function  `mds_file_types`
+ > ### Decorator(s)
+ > + property
+ > #### Declared returns: `Optional[Union[List[str], Dict[str, str], str]]`
+ > ## Function  `mds_files`
+ > ### Decorator(s)
+ > + property
+ > #### Declared returns: `Optional[Union[List[str], Dict[str, str], str]]`
+ > ## Function  `mds_local_path`
+ > ### Decorator(s)
+ > + property
+ > #### Declared returns: `Optional[str]`
  > ## Function  `route_upload`
  > ### Decorator(s)
  > + property
